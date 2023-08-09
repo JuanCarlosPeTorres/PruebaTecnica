@@ -6,7 +6,6 @@ export const MovementList = ({
   exchangeRates,
   onDelete,
 }) => {
-
   const [editedMovement, setEditedMovement] = useState(null);
   const [editedDescripcion, setEditedDescripcion] = useState("");
 
@@ -20,7 +19,7 @@ export const MovementList = ({
   };
 
   const handleChangeEdit = (e) => {
-    setEditedDescripcion(e.target.value); 
+    setEditedDescripcion(e.target.value);
   };
 
   const handleSave = () => {
@@ -30,13 +29,12 @@ export const MovementList = ({
           ? { ...movement, descripcion: editedDescripcion }
           : movement
       );
-  
+
       setMovements(updatedMovements);
-  
+
       setEditedMovement(null);
     }
   };
-  
 
   return (
     <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -46,7 +44,7 @@ export const MovementList = ({
             <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
               Fecha
             </th>
-            <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center"> 
+            <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">
               Descripción
             </th>
             <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -55,7 +53,7 @@ export const MovementList = ({
             <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
               Código
             </th>
-            <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center"> 
+            <th className="px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider text-center">
               Acciones
             </th>
           </tr>
@@ -71,7 +69,7 @@ export const MovementList = ({
                   <input
                     value={editedDescripcion}
                     onChange={handleChangeEdit}
-                    className="px-2 py-1 border rounded-md"
+                    className="px-2 py-1 border rounded-md bg-blue-50 focus:bg-white focus:border-blue-500 focus:ring focus:ring-blue-200"
                   />
                 ) : (
                   movement.descripcion
